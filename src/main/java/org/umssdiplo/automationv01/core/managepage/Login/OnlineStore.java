@@ -91,8 +91,7 @@ public class OnlineStore extends BasePage {
         CommonEvents.setInputField(motorInputField, motor);
         CommonEvents.setInputField(torreInputField, torre);
         CommonEvents.setInputField(precioInputField, precio);
-        CommonEvents.setInputField(imageInputField, image);
-//        CommonEvents.jsClickElement(imageInputField);
+        CommonEvents.setInputFieldHidden(imageInputField, image);
 
         CommonEvents.clickButton(aceptarBtn);
     }

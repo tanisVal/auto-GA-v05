@@ -20,6 +20,17 @@ public class CommonEvents {
         webElement.sendKeys(content);
     }
 
+    public static void setInputFieldHidden(WebElement webElement, String content) {
+        JavascriptExecutor jsExecutor =((JavascriptExecutor) ManageDriver.getInstance().getWebDriver());
+
+        jsExecutor.executeScript("arguments[0].style.display='block';", webElement);
+
+        webElement.clear();
+        webElement.sendKeys(content);
+
+        jsExecutor.executeScript("arguments[0].style.display='hidden';", webElement);
+    }
+
     /**
      * This method perform a click action in a web element.
      *
