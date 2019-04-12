@@ -1,5 +1,8 @@
 package org.umssdiplo.automationv01.core.utils;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.FindBy;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,8 +11,15 @@ import java.util.Properties;
 public class PropertyAccessor {
     private static final String BROWSER = "browser";
     private static final String BASE_URL = "baseurl";
-    private static final String USER_NAME = "username";
-    private static final String PASSWORD = "password";
+    private static final String MARCA = "marca";
+    private static final String MODELO = "modelo";
+    private static final String ANIO = "anio";
+    private static final String HORAS_USO = "horas_uso";
+    private static final String CAPACIDAD = "capacidad";
+    private static final By CAJA = new By.ByCssSelector("mat-option[value='Mecanica']");
+    private static final String MOTOR = "motor";
+    private static final String TORRE = "torre";
+    private static final String PRECIO = "precio";
 
     private static PropertyAccessor PropertyAccessor;
     private Properties properties;
@@ -57,11 +67,39 @@ public class PropertyAccessor {
         return getDataProperty(BASE_URL);
     }
 
-    public String getUser() {
-        return getDataProperty(USER_NAME);
+    public String getMarca() {
+        return getDataProperty(MARCA);
     }
 
-    public String getPassword() {
-        return getDataProperty(PASSWORD);
+    public String getModelo() {
+        return getDataProperty(MODELO);
+    }
+
+    public String getAnio() {
+        return getDataProperty(ANIO);
+    }
+
+    public String getHorasUso() {
+        return getDataProperty(HORAS_USO);
+    }
+
+    public String getCapacidad() {
+        return getDataProperty(CAPACIDAD);
+    }
+
+    public By getCaja() {
+        return CAJA;
+    }
+
+    public String getMotor() {
+        return getDataProperty(MOTOR);
+    }
+
+    public String getTorre() {
+        return getDataProperty(TORRE);
+    }
+
+    public String getPrecio() {
+        return getDataProperty(PRECIO);
     }
 }
