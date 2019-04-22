@@ -10,7 +10,7 @@ Feature: Login
     Given GET "/headers" postman endpoint is configured
     Then the status code should be 200
 
-  Scenario: POSTMAN- Pot using java-cucumber-restassure
-    Given POST "/post" postman endpoint is configured
-    Then the responde 'data' value is "diplomado testing"
+  Scenario: POSTMAN- POST using java-cucumber-restassure
+    Given POST "/post" postman endpoint is configured with the data "Diplomado testing"
+    Then the response 'data' value is "Diplomado testing"
     And the status code should be 200

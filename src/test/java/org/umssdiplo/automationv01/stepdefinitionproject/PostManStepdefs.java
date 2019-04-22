@@ -25,15 +25,17 @@ public class PostManStepdefs {
         assertEquals(response.getStatusCode(), statusCode);
     }
 
-    @Then("^the responde 'data' value is \"([^\"]*)\"$")
-    public void theRespondeDataValueIs(String esperado) throws Throwable {
-        String actual = response.getDataValue();
-
+    @Then("^the response 'data' value is \"([^\"]*)\"$")
+    public void theResponseDataValueIs(String esperado) throws Throwable {
+        String actual = response.jsonPath().get("data");
         Assert.assertEquals(esperado, actual);
     }
 
-    @Given("^POST \"([^\"]*)\" postman endpoint is configured$")
-    public void postPostmanEndpointIsConfigured(String arg0) throws Throwable {
 
+    @Given("^POST \"([^\"]*)\" postman endpoint is configured with the data \"([^\"]*)\"$")
+    public void postPostmanEndpointIsConfiguredWithTheData(String postEndpoint, String bodyValue) throws Throwable {
+        response = HandleRequest.post(postEndpoint, bodyValue);
     }
+
+
 }
